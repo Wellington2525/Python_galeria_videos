@@ -1,0 +1,63 @@
+{% extends 'layout.html' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+
+<div class="container mx-auto mt-4 divEfec">
+
+
+    <div class="row">
+      {% for row in row %}
+       <div class="col-md-4">
+         <div class="card-views" style="width: 18rem;">
+    
+          <div class="card-body B">
+         <h5 
+         class="card-title"  data-toggle="tooltip">
+         <li class="card-title" data-toggle="tooltip" data-placement="top" title="{{row['titulo']}}">  {{row['titulo']}}</li>
+        
+      
+         </h5>
+        
+  
+       
+          <iframe
+          width="860" height="615"  
+          src="{{row['url']}}" 
+          title="YouTube video player" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          allowfullscreen>
+        </iframe>
+        <a href="{{row['url']}}" class="btn "><i class="fab fa-youtube"></i> videos</a>
+       
+         
+      
+    </div>
+    </div>
+      </div>    
+      {%endfor%}
+
+    
+   
+
+  </div>
+    </div>
+    <br>
+    <br>
+
+    <br>
+    <br>
+
+    <br>
+    <br>
+
+
+
+<script>
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  });
+    </script>
+{% endblock %}
